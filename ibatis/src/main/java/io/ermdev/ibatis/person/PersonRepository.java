@@ -8,7 +8,8 @@ import org.apache.ibatis.annotations.Select;
 @Mapper
 public interface PersonRepository {
 
-    @Insert("CREATE TABLE IF NOT EXISTS tblperson (id BIGINT NOT NULL AUTO_INCREMENT, name VARCHAR(45), PRIMARY KEY(id))")
+    @Insert("CREATE TABLE IF NOT EXISTS tblperson (id BIGINT NOT NULL AUTO_INCREMENT, name VARCHAR(45), " +
+            "isGay TINYINT(1), PRIMARY KEY(id))")
     void createTable();
 
     @Select("SELECT * FROM tblperson WHERE id=#{personId}")

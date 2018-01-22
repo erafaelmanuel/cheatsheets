@@ -24,7 +24,7 @@ public class IbatisApplication implements CommandLineRunner{
 
 	@Override
 	public void run(String... strings) throws Exception {
-		petRepository.createTable();
 		personRepository.createTable();
+		petRepository.createTable();
 	}
 }

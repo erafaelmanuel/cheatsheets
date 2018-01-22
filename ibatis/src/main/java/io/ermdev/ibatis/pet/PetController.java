@@ -19,11 +19,4 @@ public class PetController {
     Pet findById(@PathVariable("petId") Long petId) {
         return petRepository.findById(petId);
     }
-
-    @GetMapping
-    Pet add() {
-        Pet pet = new Pet("Sonny", 21);
-        petRepository.add(pet);
-        return pet;
-    }
 }

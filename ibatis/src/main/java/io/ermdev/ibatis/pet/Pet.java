@@ -1,8 +1,5 @@
 package io.ermdev.ibatis.pet;
 
-import javax.xml.bind.annotation.XmlRootElement;
-
-@XmlRootElement
 public class Pet {
 
     private Long id;

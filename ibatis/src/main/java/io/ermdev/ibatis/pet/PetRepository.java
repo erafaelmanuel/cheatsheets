@@ -10,7 +10,8 @@ import java.util.List;
 @Mapper
 public interface PetRepository {
     @Insert("CREATE TABLE IF NOT EXISTS tblpet(id BIGINT NOT NULL AUTO_INCREMENT, name VARCHAR(45), size INT, " +
-            "PRIMARY KEY(id))")
+            "ownerId BIGINT, PRIMARY KEY(id), FOREIGN KEY(ownerId) REFERENCES tblperson(id) ON UPDATE CASCADE " +
+            "ON DELETE CASCADE)")
     void createTable();
 
     @Select("SELECT * FROM tblpet WHERE id=#{petId}")

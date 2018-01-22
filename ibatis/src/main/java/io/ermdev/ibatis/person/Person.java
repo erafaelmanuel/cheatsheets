@@ -9,12 +9,15 @@ public class Person {
 
     private Long id;
     private String name;
+    private Boolean isGay;
     private List<Pet> pets =  new ArrayList<>();
 
-    public Person(){}
+    public Person() {
+    }
 
-    public Person(String name) {
+    public Person(String name, Boolean isGay) {
         this.name = name;
+        this.isGay = isGay;
     }
 
     public Long getId() {
@@ -31,6 +34,14 @@ public class Person {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Boolean getGay() {
+        return isGay;
+    }
+
+    public void setGay(Boolean gay) {
+        isGay = gay;
     }
 
     public List<Pet> getPets() {
