@@ -1,4 +1,4 @@
-package io.ermdev.ibatis.person;
+package io.ermdev.ibatis.data.person;
 
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;

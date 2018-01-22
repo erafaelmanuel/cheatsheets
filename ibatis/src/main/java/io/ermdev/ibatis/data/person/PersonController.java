@@ -1,4 +1,4 @@
-package io.ermdev.ibatis.person;
+package io.ermdev.ibatis.data.person;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

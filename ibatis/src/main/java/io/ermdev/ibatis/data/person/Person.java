@@ -1,6 +1,6 @@
-package io.ermdev.ibatis.person;
+package io.ermdev.ibatis.data.person;
 
-import io.ermdev.ibatis.pet.Pet;
+import io.ermdev.ibatis.data.pet.Pet;
 
 import java.util.ArrayList;
 import java.util.List;

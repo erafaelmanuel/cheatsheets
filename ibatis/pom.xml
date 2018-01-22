@@ -37,7 +37,7 @@
 			<artifactId>mapfierJ</artifactId>
 			<version>v1.0-beta.6.0</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.mybatis.spring.boot</groupId>
 			<artifactId>mybatis-spring-boot-starter</artifactId>

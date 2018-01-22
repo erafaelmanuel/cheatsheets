@@ -1,7 +1,7 @@
 package io.ermdev.ibatis;
 
-import io.ermdev.ibatis.person.PersonRepository;
-import io.ermdev.ibatis.pet.PetRepository;
+import io.ermdev.ibatis.data.person.PersonRepository;
+import io.ermdev.ibatis.data.pet.PetRepository;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
