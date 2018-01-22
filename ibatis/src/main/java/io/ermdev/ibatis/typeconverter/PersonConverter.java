@@ -9,6 +9,10 @@ public class PersonConverter extends TypeConverterAdapter<Long, Person>{
 
     private PersonRepository personRepository;
 
+    public PersonConverter() {
+        super(null);
+    }
+
     public PersonConverter(Object obj) {
         super(obj);
     }
