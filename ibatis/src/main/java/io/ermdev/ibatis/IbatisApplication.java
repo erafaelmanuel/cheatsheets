@@ -1,5 +1,6 @@
 package io.ermdev.ibatis;
 
+import io.ermdev.ibatis.person.PersonRepository;
 import io.ermdev.ibatis.pet.PetRepository;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,9 @@ public class IbatisApplication implements CommandLineRunner{
 	@Autowired
 	PetRepository petRepository;
 
+	@Autowired
+	PersonRepository personRepository;
+
 	public static void main(String[] args) {
 		SpringApplication.run(IbatisApplication.class, args);
 	}
@@ -21,5 +25,6 @@ public class IbatisApplication implements CommandLineRunner{
 	@Override
 	public void run(String... strings) throws Exception {
 		petRepository.createTable();
+		personRepository.createTable();
 	}
 }

@@ -8,12 +8,14 @@ public class Pet {
     private Long id;
     private String name;
     private Integer size;
+    private Long ownerId;
 
     public Pet() {}
 
-    public Pet(String name, Integer size) {
+    public Pet(String name, Integer size, Long ownerId) {
         this.name = name;
         this.size = size;
+        this.ownerId = ownerId;
     }
 
     public Long getId() {
@@ -38,5 +40,13 @@ public class Pet {
 
     public void setSize(Integer size) {
         this.size = size;
+    }
+
+    public Long getOwnerId() {
+        return ownerId;
+    }
+
+    public void setOwnerId(Long ownerId) {
+        this.ownerId = ownerId;
     }
 }
