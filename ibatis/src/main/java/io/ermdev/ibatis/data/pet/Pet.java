@@ -46,4 +46,14 @@ public class Pet {
     public void setOwnerId(Long ownerId) {
         this.ownerId = ownerId;
     }
+
+    @Override
+    public String toString() {
+        return "Pet{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", size=" + size +
+                ", ownerId=" + ownerId +
+                '}';
+    }
 }
