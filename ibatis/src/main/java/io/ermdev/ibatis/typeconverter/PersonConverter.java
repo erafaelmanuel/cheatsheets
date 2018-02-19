@@ -2,31 +2,24 @@ package io.ermdev.ibatis.typeconverter;
 
 import io.ermdev.ibatis.data.person.Person;
 import io.ermdev.ibatis.data.person.PersonRepository;
-import io.ermdev.mapfierj.TypeConverter;
-import io.ermdev.mapfierj.TypeConverterAdapter;
-import io.ermdev.mapfierj.TypeException;
+import mapfierj.TypeConverter;
+import mapfierj.TypeConverterAdapter;
+import mapfierj.TypeException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
 @TypeConverter
-public class PersonConverter extends TypeConverterAdapter<Long, Person>{
+public class PersonConverter extends TypeConverterAdapter<Long, Person> {
 
     private PersonRepository personRepository;
 
-    @Autowired
-    public PersonConverter(PersonRepository personRepository) {
-        super(null);
-        this.personRepository = personRepository;
+    public PersonConverter() {
     }
 
-    @Override
-    public Object convert() throws TypeException {
-        if(o instanceof Long)
-            return convertTo((Long) o);
-        else if(o instanceof Person)
-            return convertFrom((Person) o);
-        else return null;
+    @Autowired
+    public PersonConverter(PersonRepository personRepository) {
+        this.personRepository = personRepository;
     }
 
     @Override
