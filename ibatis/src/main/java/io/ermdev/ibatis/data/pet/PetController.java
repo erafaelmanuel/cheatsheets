@@ -25,30 +25,39 @@ public class PetController {
         this.mapper = mapper;
     }
 
-    @GetMapping(value = "{petId}", produces = "application/json", consumes = "application/json")
+    @GetMapping(value = "{petId}")
     public ResponseEntity getById(@PathVariable("petId") Long petId) {
-        PetDto petDto = mapper.set(petRepository.findById(petId))
-                .field("ownerId", "owner")
-                .convertField("owner", Person.class)
-                .mapTo(PetDto.class);
-        if (petDto != null) {
-            return new ResponseEntity<>(petDto, HttpStatus.FOUND);
-        } else {
-            return new ResponseEntity<>("Not pets found", HttpStatus.NOT_FOUND);
+        try {
+            PetDto petDto = mapper.set(petRepository.findById(petId))
+                    .field("ownerId", "owner")
+                    .convertField("owner", Person.class)
+                    .mapTo(PetDto.class);
+            if (petDto != null) {
+                return new ResponseEntity<>(petDto, HttpStatus.FOUND);
+            } else {
+                throw new NullPointerException();
+            }
+        } catch (Exception e) {
+            return new ResponseEntity<>("Not pet found", HttpStatus.NOT_FOUND);
         }
     }
 
     @GetMapping
     public ResponseEntity getAll() {
-        List<PetDto> petDtos = mapper.set(petRepository.findAll())
-                .field("ownerId", "owner")
-                .convertField("owner", Person.class)
-                .transact()
-                .mapToList(PetDto.class);
-        if (petDtos != null) {
-            return new ResponseEntity<>(petDtos, HttpStatus.FOUND);
-        } else {
-            return new ResponseEntity<>("Not pets found", HttpStatus.NOT_FOUND);
+        try {
+            List<PetDto> petDtos = mapper.set(petRepository.findAll())
+                    .field("ownerId", "owner")
+                    .convertField("owner", Person.class)
+                    .transact()
+                    .mapToList(PetDto.class);
+            if (petDtos != null) {
+                return new ResponseEntity<>(petDtos, HttpStatus.FOUND);
+            } else {
+                throw new NullPointerException();
+            }
+        } catch (Exception e) {
+            return new ResponseEntity<>("Not pet found", HttpStatus.NOT_FOUND);
         }
+
     }
 }
