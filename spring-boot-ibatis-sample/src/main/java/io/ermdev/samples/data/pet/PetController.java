@@ -1,6 +1,6 @@
-package io.ermdev.ibatis.data.pet;
+package io.ermdev.samples.data.pet;
 
-import io.ermdev.ibatis.data.person.Person;
+import io.ermdev.samples.data.person.Person;
 import mapfierj.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

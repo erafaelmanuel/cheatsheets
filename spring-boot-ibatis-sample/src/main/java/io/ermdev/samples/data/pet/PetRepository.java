@@ -1,4 +1,4 @@
-package io.ermdev.ibatis.data.pet;
+package io.ermdev.samples.data.pet;
 
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;

@@ -1,6 +1,6 @@
-package io.ermdev.ibatis.bean;
+package io.ermdev.samples.bean;
 
-import io.ermdev.ibatis.typeconverter.PersonConverter;
+import io.ermdev.samples.typeconverter.PersonConverter;
 import mapfierj.Mapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

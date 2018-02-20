@@ -1,4 +1,4 @@
-package io.ermdev.ibatis.data.person;
+package io.ermdev.samples.data.person;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

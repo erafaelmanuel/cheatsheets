@@ -1,14 +1,14 @@
-package io.ermdev.ibatis;
+package io.ermdev.samples;
 
-import io.ermdev.ibatis.data.person.PersonRepository;
-import io.ermdev.ibatis.data.pet.PetRepository;
+import io.ermdev.samples.data.person.PersonRepository;
+import io.ermdev.samples.data.pet.PetRepository;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@MapperScan("io.ermdev.ibatis")
+@MapperScan("io.ermdev.samples")
 @SpringBootApplication
 public class IbatisApplication implements CommandLineRunner{
 

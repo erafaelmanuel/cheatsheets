@@ -1,4 +1,4 @@
-package io.ermdev.ibatis.data.pet;
+package io.ermdev.samples.data.pet;
 
 public class Pet {
 

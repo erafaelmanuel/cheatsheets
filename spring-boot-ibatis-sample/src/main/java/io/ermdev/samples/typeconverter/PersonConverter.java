@@ -1,7 +1,7 @@
-package io.ermdev.ibatis.typeconverter;
+package io.ermdev.samples.typeconverter;
 
-import io.ermdev.ibatis.data.person.Person;
-import io.ermdev.ibatis.data.person.PersonRepository;
+import io.ermdev.samples.data.person.Person;
+import io.ermdev.samples.data.person.PersonRepository;
 import mapfierj.TypeConverterAdapter;
 import mapfierj.TypeException;
 import org.springframework.beans.factory.annotation.Autowired;
