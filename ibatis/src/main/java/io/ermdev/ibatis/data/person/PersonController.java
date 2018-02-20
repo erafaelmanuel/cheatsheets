@@ -1,5 +1,7 @@
 package io.ermdev.ibatis.data.person;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,8 +17,23 @@ public class PersonController {
         this.personRepository = personRepository;
     }
 
-    @GetMapping("{personId}")
-    public Person getById(@PathVariable("personId") Long personId) {
-        return personRepository.findById(personId);
+    @GetMapping("{ownerId}")
+    public ResponseEntity getById(@PathVariable("ownerId") Long personId) {
+        Person person = personRepository.findById(personId);
+        if (person != null) {
+            return new ResponseEntity<>(person, HttpStatus.FOUND);
+        } else {
+            return new ResponseEntity<>("No owner found", HttpStatus.NOT_FOUND);
+        }
+    }
+
+    @GetMapping
+    public ResponseEntity getAll() {
+        Person persons[] = personRepository.findAll();
+        if (persons != null) {
+            return new ResponseEntity<>(persons, HttpStatus.FOUND);
+        } else {
+            return new ResponseEntity<>("No owner found", HttpStatus.NOT_FOUND);
+        }
     }
 }

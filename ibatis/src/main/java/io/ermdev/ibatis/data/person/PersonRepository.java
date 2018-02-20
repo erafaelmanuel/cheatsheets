@@ -5,6 +5,8 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
+import java.util.List;
+
 @Mapper
 public interface PersonRepository {
 
@@ -14,4 +16,7 @@ public interface PersonRepository {
 
     @Select("SELECT * FROM tblperson WHERE id=#{personId}")
     Person findById(@Param("personId") Long personId);
+
+    @Select("SELECT * FROM tblperson")
+    Person[] findAll();
 }
