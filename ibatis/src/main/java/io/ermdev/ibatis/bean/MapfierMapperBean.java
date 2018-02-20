@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
 public class MapfierMapperBean {
 
     @Bean
-    public Mapper createMapper(PersonConverter personConverter) {
+    public Mapper mapper(PersonConverter personConverter) {
         Mapper mapper = new Mapper();
         mapper.getConverter().register(personConverter);
         return mapper;
