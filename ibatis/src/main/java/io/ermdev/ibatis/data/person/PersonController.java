@@ -16,7 +16,7 @@ public class PersonController {
     }
 
     @GetMapping("{personId}")
-    Person getById(@PathVariable("personId") Long personId) {
+    public Person getById(@PathVariable("personId") Long personId) {
         return personRepository.findById(personId);
     }
 }
