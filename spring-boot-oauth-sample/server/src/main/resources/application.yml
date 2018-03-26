@@ -1,0 +1,8 @@
+server:
+  port: 5600
+  servlet:
+    context-path: /auth
+
+security:
+  basic:
+    enabled: false
