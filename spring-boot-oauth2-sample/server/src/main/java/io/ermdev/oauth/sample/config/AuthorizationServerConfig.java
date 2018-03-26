@@ -21,9 +21,9 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
         clients.inMemory()
                 .withClient("ermdev")
-                .secret("secret")
+                .secret("{noop}secret")
                 .authorizedGrantTypes("authorization_code")
-                .scopes("read")
-                .authorities("CLIENT");
+                .scopes("USER")
+                .autoApprove();
     }
 }
